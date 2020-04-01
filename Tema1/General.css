@@ -1,0 +1,46 @@
+﻿header{
+    background-color:#004658;
+    color:white;
+  
+   
+}
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #bce1e0;
+    font-family: 'Courier New';
+}
+.education{
+    background-color:#deedee;
+    padding-left:10px;
+    text-align:center;
+    margin-left:20px;
+    padding-right:10px;
+}
+    .education > h2 {
+        background-color: #004658;
+    }
+img
+{ 
+    float:right;
+}
+aside{
+    float:right;
+}
+h3{
+    display:flex;
+}
+.flex-container
+{
+    
+    display:flex;
+}
+.flex-container > article{
+    border:groove;
+    border-color:#004658;
+    margin: 5px;
+    background-color:#0f7eb0;
+    color:white;
+    border-radius:3px;
+    padding:3px;
+}

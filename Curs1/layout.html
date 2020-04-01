@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>My layout</title>
+        <style>
+            html{
+                height:100%;
+            }
+            body{
+                display:flex;
+                flex-direction:column;
+            }
+            header{
+                background: gold;
+            }
+            footer{
+                background: tomato;
+            }
+            aside{
+                background:deepskyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                My website
+            </h1>
+            <p> my awesome website where you'll find useful information</p>
+            <form>
+                <label for="">Serch this website</label>
+                <input type="search" id="search" name="q" placeholder="SearchMe" autofocus />
+                <button>
+                    Button
+                </button>
+            </form>
+        </header>
+        <main>
+            <aside>
+                <nav>
+
+                </nav>
+            </aside>
+            <div id="content">
+                some content
+            </div>
+        </main>
+        <footer>
+            Copyright &copy; 2020
+        </footer>
+    </body>
+</html>
