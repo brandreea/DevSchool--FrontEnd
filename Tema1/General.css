@@ -52,3 +52,14 @@ h3{
 header > h1{
     text-align:center;
 }
+footer {
+ 
+    background-color: #004658;
+    color:white;
+    padding:20px;
+    font-size:12px;
+    
+}
+footer>form{
+    padding-left:120px;
+}
