@@ -35,7 +35,7 @@ h3{
     
     display:flex;
 }
-.flex-container > article{
+.flex-container > p{
     border:groove;
     border-color:#004658;
     margin: 5px;
@@ -43,4 +43,5 @@ h3{
     color:white;
     border-radius:3px;
     padding:3px;
+    box-shadow:none;
 }
