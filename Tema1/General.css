@@ -5,10 +5,14 @@
    
 }
 body {
+    font-family: 'Courier New';
+    background-color:#cbe0da;
+}
+main {
     margin-left: 10%;
     margin-right: 10%;
     background-color: #bce1e0;
-    font-family: 'Courier New';
+    padding: 10px;
 }
 .education{
     background-color:#deedee;
@@ -44,4 +48,7 @@ h3{
     border-radius:3px;
     padding:3px;
     box-shadow:none;
+}
+header > h1{
+    text-align:center;
 }
