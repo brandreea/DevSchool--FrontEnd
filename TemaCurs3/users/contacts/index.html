@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>
+            Contact management
+        </title>
+        <script type="module">
+            import { init } from './index.js';
+            init();
+          </script>
+       
+    </head>
+    <body>
+        <h1>
+            My contacts
+        </h1>
+        <form id="form-add">
+            <input type="text" name="name" id="name" placeholder="Name">
+            <input type="email" name="email" id="email" placeholder="Email">
+            <input type="tel" name="phone" id="phone" placeholder="Phone">
+            <button type="submit">Add</button>
+            
+        </form>
+        <form id="form-delete" hidden>
+            <ul id="list">
+                
+            </ul>
+            <button type="submit"> Delete contacts</button>
+        </form>
+    </body>
+</html>
