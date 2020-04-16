@@ -12,22 +12,23 @@ function onSubmitAdd(event) {
   const form = event.target;
   const data = new FormData(form);
   const contact = Object.fromEntries(data);
+  let btn=document.getElementById('delete-btn').disabled;
   append(contact);
   render();
 }
 
 function onSubmitDelete() {
-    //const contacts=read();
+
     const contacts=read();
-    event.preventDefault();
-    const form = event.target;
     let aux=[];
-    const data = new FormData(form)
+  
     const contactsHTML=document.getElementById('list').getElementsByTagName('li');
-    for(var i=0;i<contacts.length;i++)
+    for(let i=0;i<contacts.length;i++)
        { 
            if(!contactsHTML[i].firstElementChild.checked)
-           aux.push(contacts[i])
+           {
+             aux.push(contacts[i]);
+           }
           console.log(contacts[i]);
        }
     
@@ -36,6 +37,24 @@ function onSubmitDelete() {
     
 }
 
+export function enableButton()
+{
+  const contactsHTML=document.getElementById('list').getElementsByTagName('li');
+  console.log("here");
+  let shouldEnable=false;
+  for(let i=0;i<contactsHTML.length;i++)
+       { 
+           if(contactsHTML[i].firstElementChild.checked)
+           {
+             shouldEnable=true;
+             break;
+           }
+       }
+       console.log(shouldEnable);
+       if(shouldEnable==true) 
+           document.getElementById('delete-btn').removeAttribute("disabled");
+       else document.getElementById('delete-btn').setAttribute("disabled", "disabled");
+}
 function render() {
   const contacts = read();
   const items = contacts.map(
@@ -46,6 +65,15 @@ function render() {
       </li>
     `
   );
+
   document.getElementById('list').innerHTML = items.join('');
   document.getElementById('form-delete').hidden = contacts.length === 0;
+  const contactsHTML=document.getElementById('list').getElementsByTagName('li');
+  for(let i=0;i<contacts.length;i++)
+     { 
+        contactsHTML[i].firstElementChild.addEventListener('change', enableButton);
+        
+     }
+  
+  
 }
