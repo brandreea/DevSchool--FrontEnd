@@ -1,6 +1,4 @@
-//am intampinat o problema pe care nu am reusit sa o rezolv
-//onClickEdit, desi functioneaza corespunzator, pare sa acapareze onChangeDelete
-//am incercat sa fac schimbarea manual, insa nu se apeleaza listenerul
+
 
 import { read, append, remove, write } from './storage.js';
 
@@ -39,11 +37,13 @@ function onSubmitDelete(event) {
 }
 
 function onChangeDelete(event) {
+  console.log("on onChangeDelete:");
   const { form } = event.target;
   // const form = event.target.form;
   // const form = event.currentTarget;
   const data = new FormData(form);
-  const hasChecked = data.getAll('id').length > 0;
+  const hasChecked = data.getAll('checkbox').length > 0;
+  console.log(!hasChecked);
   form.elements.delete.disabled = !hasChecked;
 }
 
@@ -119,15 +119,17 @@ function render() {
     contact => `
       <li>
         
-        <fieldset name="${'element'+ contact.id}">
+        <label name="${'label'+ contact.id}">
           <input type="checkbox" name="checkbox" value="${contact.id}" >
-          <input type="text" name="name" value="${contact.name}" readonly>
-          <input type="text" name="email" value="${contact.email}" readonly>
-          <input type="text" name="phone" value="${contact.phone}" readonly>
-          <input type="button" id="edit" name ="${contact.id}" value="Edit">
-          <input type="button" id="update" name="${contact.id}" value="Update" hidden>
-          <input type="button" id="cancel" name="${contact.id}" value="Cancel" hidden>
-          </fieldset>
+          <fieldset name="${'element'+ contact.id}">
+            <input type="text" name="name" value="${contact.name}" readonly>
+            <input type="text" name="email" value="${contact.email}" readonly>
+            <input type="text" name="phone" value="${contact.phone}" readonly>
+            <input type="button" id="edit" name ="${contact.id}" value="Edit">
+            <input type="button" id="update" name="${contact.id}" value="Update" hidden>
+            <input type="button" id="cancel" name="${contact.id}" value="Cancel" hidden>
+            </fieldset>
+          </label>
         
       </li>
     `
