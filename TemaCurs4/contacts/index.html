@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact management</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="general.css">
+    <script type="module">
+      import { init } from './index.js';
+      init();
+    </script>
+
+  </head>
+
+  <body>
+    <!-- <center> -->
+      <h1>My contacts</h1>
+      <h2>Add a new contact</h2>
+      <form id="form-add">
+        
+        <input type="text" name="name" id="name" placeholder="Name" required />
+        <input type="email" name="email" id="email" placeholder="E-mail" />
+        <input type="tel" name="phone" id="phone" placeholder="Phone" />
+        <button type="submit">Add</button>
+      </form>
+      <h2>My contacts</h2>
+      <form id="form-delete" hidden>
+        <ul id="list"></ul>
+        <button type="submit" name="delete" id="del" disabled>Delete selected contacts</button>
+      </form>
+
+  <!-- </center> -->
+  </body>
+</html>
