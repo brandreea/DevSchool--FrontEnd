@@ -100,15 +100,7 @@ function onClickEdit(event){
         form.elements[contactToEdit].elements.edit.hidden=false;
         }
         break;
-      default:
-        console.log("on default:");
-        contactToEdit="element"+event.target.value;
-        console.log(contactToEdit);
-        if(form.elements[contactToEdit].elements.checkbox.checked==false)
-          form.elements[contactToEdit].elements.checkbox.checked=true;
-          else  form.elements[contactToEdit].elements.checkbox.checked=false;
-        onChangeDelete(event);
-        console.log(form.elements[contactToEdit].elements.checkbox.checked);
+  
       }
 
 
