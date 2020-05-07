@@ -7,13 +7,13 @@ export class AppListComponent extends LitElement {
         display: inline-block;
         padding: 2rem;
         height: 2rem;
-    
+
         max-width: 30%;
       }
       input {
         border: none;
         display: block;
-     
+
         //margin-left:auto;
         margin-top: 10px;
         margin-rigth: auto;
@@ -51,7 +51,7 @@ export class AppListComponent extends LitElement {
     return html`
       <li name="${'element' + this.id}">
         <fieldset>
-        <input type="checkbox" name="checkbox" value="${this.id} id="checkmark" >
+          <input type="checkbox" name="checkbox" value="${this.id} id="checkmark" >
           <input type="text" name="title" value="${this.name}" id="title" readonly />
           <input type="text" name="content" value="${this.content}" readonly />
           <input
