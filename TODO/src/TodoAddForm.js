@@ -71,7 +71,15 @@ export class TodoAddForm extends LitElement {
       }
     `;
   }
-
+  static get properties() {
+    return {
+      address: { type: String },
+    };
+  }
+  constructor() {
+    super();
+    this.setAddress();
+  }
   //Renders the form along with an clickable index (the legend)
   //on click, each index filters the TODOs by cathegory
   render() {
@@ -79,6 +87,7 @@ export class TodoAddForm extends LitElement {
     return html`
       <h2>Add a TODO note</h2>
       <form @submit=${this._onSubmit} id="addForm">
+        <p>${this.address}</p>
         <p>
           <label class="item-label">Title</label>
           <input type="text" name="name" id="name" placeholder="Title" required />
@@ -121,6 +130,32 @@ export class TodoAddForm extends LitElement {
       cathegory: event.target.name,
     };
     this.dispatchEvent(new CustomEvent('filter-elements', { detail: data }));
+  }
+  setAddress() {
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 3000,
+      maximumAge: 0,
+    };
+    navigator.geolocation.getCurrentPosition(
+      this.getPosition.bind(this),
+      this._errorFunction,
+      options
+    );
+  }
+
+  async getPosition(position) {
+    console.log(position);
+    const response = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}&zoom=18&addressdetails=1`
+    );
+
+    let data = await response.json();
+    console.log(data);
+    this.address = data.display_name;
+  }
+  errorFunction() {
+    console.warn('Something went wrong.');
   }
 }
 window.customElements.define('todo-add-form', TodoAddForm);
