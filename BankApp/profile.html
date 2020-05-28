@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MyBankingApp</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="general.css" />
+    <script src="dist/bundle.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="module">
+      import { read } from './src/storage.js';
+      if (read().length === 0) {
+        window.location.replace('login.html');
+      }
+    </script>
+  </head>
+  <body>
+    <bank-header></bank-header>
+    <main>
+      <bank-side-menu> </bank-side-menu>
+      <div></div>
+      <div class="main-container">
+        <section>
+          <div class="title">Welcome back!</div>
+          <div id="statistics-component"></div>
+          <bank-profile-statistics id="profile-statistics"></bank-profile-statistics>
+          <div id="statistics"></div>
+          <strong class="heading">Keep up with your balance</strong>
+          <p>Check you balance daily and be aware of you income.</p>
+          <strong class="heading">Keep track of your transactions</strong>
+          <p>You can now see both received and performed transactions.</p>
+          <strong class="heading">Send money whenever, wherever.</strong>
+          <p>
+            With our online banking service, sending money and performing transactions is only one
+            click away.
+          </p>
+        </section>
+      </div>
+    </main>
+    <bank-footer></bank-footer>
+  </body>
+</html>

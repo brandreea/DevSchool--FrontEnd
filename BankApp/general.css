@@ -1,0 +1,33 @@
+html {
+  font-family: Verdana, Geneva, sans-serif;
+}
+main {
+  display: flex;
+  /* font-family: Verdana, Geneva, sans-serif; */
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.5) inset;
+}
+
+section {
+  display: block;
+  padding-bottom: 6rem;
+}
+section > .title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 5rem;
+  display: block;
+  font-weight: strong;
+  font-size: 3rem;
+  width: 50rem;
+  padding-top: 2rem;
+}
+.heading {
+  display: block;
+  padding-top: 3rem;
+}
+.main-container {
+  flex: 100%;
+  padding-left: 7rem;
+  padding-right: 7rem;
+}

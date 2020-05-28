@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Create transaction</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="general.css" />
+    <script src="dist/bundle.js"></script>
+    <script type="module">
+      import { read } from './src/storage.js';
+      if (read().length === 0) {
+        window.location.replace('login.html');
+      }
+    </script>
+  </head>
+  <body>
+    <bank-header></bank-header>
+    <main>
+      <bank-side-menu></bank-side-menu>
+      <bank-transaction-form></bank-transaction-form>
+    </main>
+    <bank-footer></bank-footer>
+  </body>
+</html>
